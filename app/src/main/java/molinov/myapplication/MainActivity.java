@@ -3,13 +3,9 @@ package molinov.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,31 +14,67 @@ public class MainActivity extends AppCompatActivity {
             compute, minus, plus, c, equal;
     ArrayList<Button> buttons;
     ArrayList<String> values;
+    String operation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
-        setOnClickListeners();
+        initializeButtons();
+        setButtonsOnClickListeners();
     }
 
-    private void setOnClickListeners() {
+    private void setButtonsOnClickListeners() {
         for (int i = 0; i < buttons.size(); i++) {
             int k = i;
             buttons.get(i).setOnClickListener(v -> {
                 calculate.append(values.get(k));
+                operation = calculate.getText().toString();
+                result.setText(String.valueOf(proceedOperation(operation)));
             });
         }
         c.setOnClickListener(v -> {
             calculate.setText("");
         });
-//        equal.setOnClickListener(v -> {
-//
-//        });
+        equal.setOnClickListener(v -> {
+            calculate.setText(result.getText());
+            result.setText("");
+        });
     }
 
-    private void init() {
+    private float proceedOperation(String operation) {
+        String[] temp = operation.split(getString(R.string.not_a_number));
+        float[] values = new float[temp.length];
+        for (int i = 0; i < temp.length; i++) {
+            values[i] = Float.parseFloat(temp[i]);
+        }
+        temp = operation.split(getString(R.string.number));
+        float result = values[0];
+        for (int i = 1; i < values.length; i++) {
+            switch (temp[i]) {
+                case "×": {
+                    result *= values[i];
+                    continue;
+                }
+                case "÷": {
+                    result /= values[i];
+                    continue;
+                }
+                case "+": {
+                    result += values[i];
+                    continue;
+                }
+                case "-": {
+                    result -= values[i];
+                    continue;
+                }
+                default:
+            }
+        }
+        return result;
+    }
+
+    private void initializeButtons() {
         result = findViewById(R.id.result);
         calculate = findViewById(R.id.calculate);
         nil = findViewById(R.id.nil);
@@ -62,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         compute = findViewById(R.id.compute);
         minus = findViewById(R.id.minus);
         plus = findViewById(R.id.plus);
+        equal = findViewById(R.id.equal);
         values = new ArrayList<>(Arrays.asList(
                 getString(R.string.nil),
                 getString(R.string.one),

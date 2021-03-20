@@ -19,4 +19,6 @@
     <string name="nil">0</string>
     <string name="comma">,</string>
     <string name="equal">=</string>
+    <string name="number">\\d+\\.?\\d+|\\d</string>
+    <string name="not_a_number">[^.\\d]</string>
 </resources>
