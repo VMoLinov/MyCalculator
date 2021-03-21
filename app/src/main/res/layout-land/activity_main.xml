@@ -17,43 +17,45 @@
         android:src="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/grid"
         app:layout_constraintTop_toTopOf="@id/grid" />
 
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingEnd="4dp"
+        android:layout_marginEnd="8dp"
+        android:paddingEnd="20dp"
         android:paddingBottom="20dp"
         android:textAlignment="textEnd"
         android:textColor="@color/green"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/linear"
-        app:layout_constraintEnd_toEndOf="@id/grid"
+        app:layout_constraintEnd_toStartOf="@id/linear"
+        app:layout_constraintTop_toBottomOf="@id/calculate"
         tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/calculate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingEnd="4dp"
+        android:layout_marginEnd="8dp"
+        android:paddingEnd="20dp"
         android:paddingBottom="20dp"
         android:textAlignment="textEnd"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/result"
-        app:layout_constraintEnd_toEndOf="@id/grid"
+        app:layout_constraintEnd_toStartOf="@id/linear"
+        app:layout_constraintTop_toTopOf="@id/grid"
         tools:ignore="RtlSymmetry" />
 
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/grid"
-        app:layout_constraintStart_toStartOf="@id/grid">
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/grid"
+        app:layout_constraintEnd_toStartOf="@id/grid">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/historyButton"
@@ -67,18 +69,16 @@
 
     <GridLayout
         android:id="@+id/grid"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:columnCount="4"
-        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/c"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/c"
@@ -87,8 +87,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/square"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/square"
@@ -97,8 +97,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/percent"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/percent"
@@ -107,8 +107,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/split"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/split"
@@ -117,8 +117,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/seven"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/seven"
@@ -127,8 +127,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/eight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/eight"
@@ -137,8 +137,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/nine"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/nine"
@@ -147,8 +147,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/compute"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/compute"
@@ -157,8 +157,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/four"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/four"
@@ -167,8 +167,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/five"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/five"
@@ -177,8 +177,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/six"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/six"
@@ -187,8 +187,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/minus"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/minus"
@@ -197,8 +197,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/one"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/one"
@@ -207,8 +207,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/two"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/two"
@@ -217,8 +217,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/three"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/three"
@@ -227,8 +227,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/plus"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/plus"
@@ -237,8 +237,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/nil"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_columnSpan="2"
             android:layout_gravity="fill_horizontal"
             android:layout_margin="4dp"
@@ -249,8 +249,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dot"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/dot"
@@ -259,8 +259,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/equal"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="4dp"
             android:background="@drawable/circle"
             android:text="@string/equal"
@@ -272,14 +272,13 @@
     <TextView
         android:id="@+id/historyText"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:background="@color/black"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@id/grid"
-        app:layout_constraintEnd_toEndOf="@id/grid"
-        app:layout_constraintStart_toStartOf="@id/grid"
-        app:layout_constraintTop_toTopOf="@id/grid" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/linear"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
