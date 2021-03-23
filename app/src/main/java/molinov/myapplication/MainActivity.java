@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton historyButton;
     ArrayList<Button> buttons;
     ArrayList<String> values;
+    ScrollView historyLayout;
     String operation;
     Fields fields = new Fields();
     String fieldsKey = "key";
@@ -56,20 +57,56 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(String.valueOf(proceedOperation(operation)));
             });
         }
-        c.setOnClickListener(v -> calculate.setText(""));
+        c.setOnClickListener(v -> calculate.setText(null));
         equal.setOnClickListener(v -> {
             fields.addHistory(calculate.getText().toString() + " = " + result.getText().toString());
             calculate.setText(result.getText().toString());
-            result.setText("");
+            result.setText(null);
         });
         historyButton.setOnClickListener(v -> {
             historyText.setText(fields.getHistory());
-            if (historyText.getVisibility() != View.VISIBLE) {
-                historyText.setVisibility(View.VISIBLE);
+            if (historyLayout.getVisibility() != View.VISIBLE) {
+                historyLayout.setVisibility(View.VISIBLE);
             } else {
-                historyText.setVisibility(View.INVISIBLE);
+                historyLayout.setVisibility(View.INVISIBLE);
             }
         });
+        square.setOnClickListener(v -> {
+            if (!calculate.getText().toString().isEmpty()) {
+                operation = calculate.getText().toString();
+                String score = String.valueOf(Math.sqrt(proceedOperation(operation)));
+                fields.addHistory(getString(R.string.square) + "(" + operation + ") = " + score);
+                result.setText(score);
+            }
+        });
+        percent.setOnClickListener(v -> {
+            String s = calculate.getText().toString();
+            if (!s.isEmpty() && (s.contains(getString(R.string.plus)) && s.length() - 1 > s.indexOf(getString(R.string.plus))
+                    || (s.contains(getString(R.string.minus)) && s.length() - 1 > s.indexOf(getString(R.string.minus))))) {
+                String score = String.valueOf(proceedPercent(s)); //Check
+                fields.addHistory(s + getString(R.string.percent) + " = " + score);
+                result.setText(score);
+            }
+        });
+    }
+
+    private float proceedPercent(String s) {
+        String[] temp = s.split(getString(R.string.not_a_number));
+        float[] values = new float[temp.length];
+        for (int i = 0; i < temp.length; i++) {
+            values[i] = Float.parseFloat(temp[i]);
+        }
+        temp = s.split(getString(R.string.number));
+        switch (temp[1]) { //Hardcoded. Need to fix
+            case "+": {
+                return values[0] * ((values[1] / 100) + 1);
+            }
+            case "-": {
+                return values[0] * (1 - (values[1] / 100));
+            }
+            default:
+                return 0;
+        }
     }
 
     private float proceedOperation(String operation) {
@@ -128,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
         equal = findViewById(R.id.equal);
         dot = findViewById(R.id.dot);
         historyButton = findViewById(R.id.historyButton);
+        historyLayout = findViewById(R.id.historyLayout);
         values = new ArrayList<>(Arrays.asList(
                 getString(R.string.nil),
                 getString(R.string.one),
@@ -139,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.seven),
                 getString(R.string.eight),
                 getString(R.string.nine),
-                getString(R.string.square),
                 getString(R.string.percent),
                 getString(R.string.split),
                 getString(R.string.compute),
@@ -147,6 +184,6 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.plus),
                 getString(R.string.dot)));
         buttons = new ArrayList<>(Arrays.asList(nil, one, two, three, four, five,
-                six, seven, eight, nine, square, percent, split, compute, minus, plus, dot));
+                six, seven, eight, nine, percent, split, compute, minus, plus, dot));
     }
 }

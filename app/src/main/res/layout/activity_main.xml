@@ -26,7 +26,6 @@
         android:layout_height="wrap_content"
         android:paddingEnd="4dp"
         android:paddingBottom="20dp"
-        android:textAlignment="textEnd"
         android:textColor="@color/green"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/linear"
@@ -77,209 +76,217 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/c"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/c"
             android:textColor="@color/red"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/square"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/square"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/percent"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/percent"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/split"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/split"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/seven"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/seven"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/eight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/eight"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/nine"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/nine"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/compute"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/compute"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/four"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/four"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/five"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/five"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/six"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/six"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/minus"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/minus"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/one"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/one"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/two"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/two"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/three"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/three"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/plus"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/plus"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/nil"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
             android:layout_columnSpan="2"
             android:layout_gravity="fill_horizontal"
-            android:layout_margin="4dp"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/nil"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dot"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/dot"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/equal"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/circle"
             android:text="@string/equal"
             android:textColor="@color/green"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
     </GridLayout>
 
-    <TextView
-        android:id="@+id/historyText"
+    <ScrollView
+        android:id="@+id/historyLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/black"
-        android:textColor="@color/white"
-        android:textSize="30sp"
+        android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@id/grid"
         app:layout_constraintEnd_toEndOf="@id/grid"
         app:layout_constraintStart_toStartOf="@id/grid"
-        app:layout_constraintTop_toTopOf="@id/grid" />
+        app:layout_constraintTop_toTopOf="@id/grid">
+
+        <TextView
+            android:id="@+id/historyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
