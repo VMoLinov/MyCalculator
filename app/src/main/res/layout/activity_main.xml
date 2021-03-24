@@ -9,8 +9,9 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/nil"
+        android:layout_height="@dimen/nil"
+        android:adjustViewBounds="true"
         android:background="@color/black"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
@@ -74,204 +75,111 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/c"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
+            style="@style/MyButton"
             android:text="@string/c"
-            android:textColor="@color/red"
-            android:textSize="@dimen/textSizeButton" />
+            android:textColor="@color/red" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/square"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/square"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/square" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/percent"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/percent"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/percent" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/split"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/split"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/split" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/seven"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/seven"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/seven" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/eight"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/eight"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/eight" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/nine"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/nine"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/nine" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/compute"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/compute"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/compute" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/four"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/four"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/four" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/five"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/five"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/five" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/six"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/six"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/six" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/minus"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/minus"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/minus" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/one"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/one"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/one" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/two"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/two"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/two" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/three"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/three"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/three" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/plus"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/plus"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/plus" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/nil"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
+            style="@style/MyButton"
             android:layout_columnSpan="2"
             android:layout_gravity="fill_horizontal"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/nil"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            android:text="@string/nil" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/dot"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
-            android:text="@string/dot"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSizeButton" />
+            style="@style/MyButton"
+            android:text="@string/dot" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/equal"
-            android:layout_width="@dimen/button"
-            android:layout_height="@dimen/button"
-            android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/circle"
+            style="@style/MyButton"
             android:text="@string/equal"
-            android:textColor="@color/green"
-            android:textSize="@dimen/textSizeButton" />
+            android:textColor="@color/green" />
 
     </GridLayout>
 
     <ScrollView
         android:id="@+id/historyLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/nil"
+        android:layout_height="@dimen/nil"
         android:background="@color/black"
         android:orientation="vertical"
         android:visibility="invisible"
@@ -285,7 +193,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="@dimen/textSizeButton" />
 
     </ScrollView>
 
