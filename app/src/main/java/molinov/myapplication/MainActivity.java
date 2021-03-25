@@ -12,8 +12,8 @@ import java.util.*;
 public class MainActivity extends AppCompatActivity {
 
     TextView result, calculate, historyText;
-    Button nil, one, two, three, four, five, six, seven, eight, nine, square, percent, split,
-            compute, minus, plus, dot, c, equal;
+    Button nil, one, two, three, four, five, six, seven, eight, nine, percent, split,
+            compute, minus, plus, dot, c, equal, square;
     ImageButton historyButton;
     ArrayList<Button> buttons;
     ArrayList<String> values;
@@ -49,12 +49,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setButtonsOnClickListeners() {
-        for (int i = 0; i < buttons.size(); i++) {
+        String[] numbers = getResources().getStringArray(R.array.numbers);
+        for (int i = 0; i < numbers.length; i++) {
             int k = i;
             buttons.get(i).setOnClickListener(v -> {
-                calculate.append(values.get(k));
+                calculate.append(numbers[k]);
                 operation = calculate.getText().toString();
                 result.setText(String.valueOf(proceedOperation(operation)));
+            });
+        }
+        String[] symbols = getResources().getStringArray(R.array.symbols);
+        int index = numbers.length;
+        for (int i = index; i < index + symbols.length; i++) {
+            int k = i - index;
+            buttons.get(i).setOnClickListener(v -> {
+                String calcString = calculate.getText().toString();
+                if (!calcString.isEmpty() && !getString(R.string.not_a_number).endsWith(calcString)) {
+                    calculate.append(symbols[k]);
+                }
             });
         }
         c.setOnClickListener(v -> calculate.setText(null));
