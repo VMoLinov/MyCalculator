@@ -18,6 +18,5 @@
         <item>@string/compute</item>
         <item>@string/minus</item>
         <item>@string/plus</item>
-        <item>@string/dot</item>
     </string-array>
 </resources>

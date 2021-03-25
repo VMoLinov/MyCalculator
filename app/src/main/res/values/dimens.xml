@@ -2,7 +2,13 @@
 <resources>
     <dimen name="nil">0dp</dimen>
     <dimen name="button">70dp</dimen>
-    <dimen name="textSizeButton">30sp</dimen>
-    <dimen name="marginButton">4dp</dimen>
+    <dimen name="text_size_button">30sp</dimen>
+    <dimen name="margin_button">4dp</dimen>
     <dimen name="stroke">3dp</dimen>
+    <dimen name="fields_text_size">40sp</dimen>
+    <dimen name="padding_bottom_fields">20dp</dimen>
+    <dimen name="padding_end_fields">4dp</dimen>
+    <dimen name="linear_start_margin">8dp</dimen>
+    <dimen name="linear_button_size">60dp</dimen>
+    <dimen name="fields_margin_end">8dp</dimen>
 </resources>
