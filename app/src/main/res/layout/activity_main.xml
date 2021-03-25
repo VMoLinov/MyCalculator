@@ -4,15 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:theme="@style/MyThemeLight"
     tools:context=".MainActivity">
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/themeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="@dimen/nil"
         android:layout_height="@dimen/nil"
         android:adjustViewBounds="true"
-        android:background="@color/black"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         android:src="@drawable/background"
@@ -40,7 +46,6 @@
         android:paddingEnd="4dp"
         android:paddingBottom="20dp"
         android:textAlignment="textEnd"
-        android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/result"
         app:layout_constraintEnd_toEndOf="@id/grid"
