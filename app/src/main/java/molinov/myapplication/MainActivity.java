@@ -3,8 +3,7 @@ package molinov.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Application;
-import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
@@ -12,7 +11,6 @@ import android.widget.*;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.*;
-import java.util.jar.Attributes;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,53 +22,14 @@ public class MainActivity extends AppCompatActivity {
     Fields fields = new Fields();
     String fieldsKey = "key";
     SwitchMaterial themeSwitch;
-    private static final int MyThemeLight = 0;
-    private static final int MyTheme = 1;
-    private static final String NameSharedPreference = "LOGIN";
-    private static final String AppTheme = "APP_THEME";
+    Resources.Theme dark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(getAppTheme(R.style.MyThemeLight));
         setContentView(R.layout.activity_main);
         initializeButtons();
         setButtonsOnClickListeners();
-        initSwitchTheme(findViewById(R.id.themeSwitch));
-    }
-
-    private void initSwitchTheme(View themeSwitcher) {
-        themeSwitcher.setOnClickListener(v -> {
-            if (themeSwitch.isChecked()) {
-                setAppTheme(MyTheme);
-            } else {
-                setAppTheme(MyThemeLight);
-            }
-        });
-    }
-
-    private int getAppTheme(int codeStyle) {
-        return getCodeStyleInt(getCodeStyle(codeStyle));
-    }
-
-    private int getCodeStyleInt(int codeStyle) {
-        if (codeStyle == MyTheme) {
-            return R.style.MyTheme;
-        }
-        return R.style.MyThemeLight;
-    }
-
-    private int getCodeStyle(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        return sharedPref.getInt(AppTheme, codeStyle);
-    }
-
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(AppTheme, codeStyle);
-        editor.apply();
-        recreate();
     }
 
     @Override
@@ -154,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
                 String score = String.valueOf(proceedPercent(s)); //Check
                 fields.addHistory(s + getString(R.string.percent) + " = " + score);
                 result.setText(score);
+            }
+        });
+        themeSwitch.setOnClickListener(v -> {
+            if (themeSwitch.isChecked()) {
             }
         });
     }

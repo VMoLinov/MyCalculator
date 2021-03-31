@@ -14,10 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="MyThemeLight" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="MyTheme.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorOnPrimary">@color/primaryLightColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="android:textColor">@color/green</item>
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorOnSecondary">@color/secondaryLightColor</item>
         <!--        <item name="android:colorBackground">@color/black</item>-->

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/MyTheme.Light"
     tools:context=".MainActivity">
 
     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -30,10 +31,10 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingEnd="@dimen/padding_end_fields"
-        android:paddingBottom="@dimen/padding_bottom_fields"
+        android:paddingEnd="4dp"
+        android:paddingBottom="20dp"
         android:textColor="@color/green"
-        android:textSize="@dimen/fields_text_size"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/linear"
         app:layout_constraintEnd_toEndOf="@id/grid"
         tools:ignore="RtlSymmetry" />
@@ -42,9 +43,10 @@
         android:id="@+id/calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingEnd="@dimen/padding_end_fields"
-        android:paddingBottom="@dimen/padding_bottom_fields"
-        android:textSize="@dimen/fields_text_size"
+        android:paddingEnd="4dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="textEnd"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/result"
         app:layout_constraintEnd_toEndOf="@id/grid"
         tools:ignore="RtlSymmetry" />
@@ -53,19 +55,19 @@
         android:id="@+id/linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/linear_start_margin"
+        android:layout_marginStart="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/grid"
         app:layout_constraintStart_toStartOf="@id/grid">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/historyButton"
-            android:layout_width="@dimen/linear_button_size"
-            android:layout_height="@dimen/linear_button_size"
-            android:background="@android:color/transparent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@android:color/transparent"
             app:icon="@drawable/ic_history"
             app:iconGravity="textStart"
-            app:iconSize="@dimen/linear_button_size" />
+            app:iconSize="60dp" />
     </LinearLayout>
 
     <GridLayout
@@ -195,6 +197,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_button" />
+            android:textSize="@dimen/textSizeButton" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
