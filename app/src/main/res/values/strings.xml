@@ -22,4 +22,9 @@
     <string name="not_a_number">[^.\\d]</string>
     <string name="square">√</string>
     <string name="settings">settings</string>
+    <string name="choice_theme">Выберите тему приложения</string>
+    <string name="theme_1">Тема №1</string>
+    <string name="theme_2">Тема №2</string>
+    <string name="theme_3">Тема №3</string>
+    <string name="apply_theme">Тема применена</string>
 </resources>
