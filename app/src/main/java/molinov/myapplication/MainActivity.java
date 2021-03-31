@@ -4,70 +4,31 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView result, calculate, historyText;
-    Button nil, one, two, three, four, five, six, seven, eight, nine, percent, split,
+    private TextView result, calculate, historyText;
+    MaterialButton nil, one, two, three, four, five, six, seven, eight, nine, percent, split,
             compute, minus, plus, dot, c, equal, square, historyButton, settings;
-    ArrayList<Button> buttons;
-    ScrollView historyLayout;
-    Fields fields = new Fields();
-    String fieldsKey = "key";
-    private static final int MyThemeLight = 0;
-    private static final int MyTheme2 = 1;
-    private static final String NameSharedPreference = "LOGIN";
-    private static final String AppTheme = "APP_THEME";
+    private ArrayList<Button> buttons;
+    private ScrollView historyLayout;
+    private Fields fields = new Fields();
+    private final String fieldsKey = "key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(getAppTheme(R.style.MyThemeLight));
+//        setTheme(Settings.getAppTheme(R.style.MyTheme1));
         setContentView(R.layout.activity_main);
         initializeButtons();
         setButtonsOnClickListeners();
-    }
-
-//    private void initSwitchTheme(View themeSwitcher) {
-//        themeSwitcher.setOnClickListener(v -> {
-//            if (themeSwitch.isChecked()) {
-//                setAppTheme(MyTheme2);
-//            } else {
-//                setAppTheme(MyThemeLight);
-//            }
-//        });
-//    }
-
-    private int getAppTheme(int codeStyle) {
-        return getCodeStyleInt(getCodeStyle(codeStyle));
-    }
-
-    private int getCodeStyleInt(int codeStyle) {
-        if (codeStyle == MyTheme2) {
-            return R.style.MyTheme2;
-        }
-        return R.style.MyThemeLight;
-    }
-
-    private int getCodeStyle(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        return sharedPref.getInt(AppTheme, codeStyle);
-    }
-
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(AppTheme, codeStyle);
-        editor.apply();
-        recreate();
     }
 
     @Override
