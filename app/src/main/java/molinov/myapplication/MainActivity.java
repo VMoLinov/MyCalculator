@@ -3,7 +3,7 @@ package molinov.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Application;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -12,20 +12,18 @@ import android.widget.*;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.*;
-import java.util.jar.Attributes;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView result, calculate, historyText;
     Button nil, one, two, three, four, five, six, seven, eight, nine, percent, split,
-            compute, minus, plus, dot, c, equal, square, historyButton;
+            compute, minus, plus, dot, c, equal, square, historyButton, settings;
     ArrayList<Button> buttons;
     ScrollView historyLayout;
     Fields fields = new Fields();
     String fieldsKey = "key";
-    SwitchMaterial themeSwitch;
     private static final int MyThemeLight = 0;
-    private static final int MyTheme = 1;
+    private static final int MyTheme2 = 1;
     private static final String NameSharedPreference = "LOGIN";
     private static final String AppTheme = "APP_THEME";
 
@@ -36,26 +34,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initializeButtons();
         setButtonsOnClickListeners();
-        initSwitchTheme(findViewById(R.id.themeSwitch));
     }
 
-    private void initSwitchTheme(View themeSwitcher) {
-        themeSwitcher.setOnClickListener(v -> {
-            if (themeSwitch.isChecked()) {
-                setAppTheme(MyTheme);
-            } else {
-                setAppTheme(MyThemeLight);
-            }
-        });
-    }
+//    private void initSwitchTheme(View themeSwitcher) {
+//        themeSwitcher.setOnClickListener(v -> {
+//            if (themeSwitch.isChecked()) {
+//                setAppTheme(MyTheme2);
+//            } else {
+//                setAppTheme(MyThemeLight);
+//            }
+//        });
+//    }
 
     private int getAppTheme(int codeStyle) {
         return getCodeStyleInt(getCodeStyle(codeStyle));
     }
 
     private int getCodeStyleInt(int codeStyle) {
-        if (codeStyle == MyTheme) {
-            return R.style.MyTheme;
+        if (codeStyle == MyTheme2) {
+            return R.style.MyTheme2;
         }
         return R.style.MyThemeLight;
     }
@@ -95,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
             int k = i;
             buttons.get(i).setOnClickListener(v -> {
                 calculate.append(numbers[k]);
-                result.setText(String.valueOf(proceedOperation(calculate.getText().toString())));
+                String forCheck = String.valueOf(proceedOperation(calculate.getText().toString()));
+                result.setText(endsWith(forCheck));
             });
         }
         String[] symbols = getResources().getStringArray(R.array.symbols);
@@ -128,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         equal.setOnClickListener(v -> {
             String resString = result.getText().toString();
             fields.addHistory(calculate.getText().toString() + " = " + resString);
-            calculate.setText(resString);
+            calculate.setText(endsWith(resString));
             result.setText(null);
         });
         historyButton.setOnClickListener(v -> {
@@ -156,6 +154,19 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(score);
             }
         });
+        settings.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Settings.class);
+            startActivity(intent);
+        });
+    }
+
+    private String endsWith(String s) {
+        if (s.endsWith(".0")) {
+            StringBuilder edit = new StringBuilder(s);
+            edit.deleteCharAt(edit.length() - 1);
+            edit.deleteCharAt(edit.length() - 1);
+            return edit.toString();
+        } else return s;
     }
 
     private boolean calculateFieldEndsWithSymbols(String s) {
@@ -241,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
         dot = findViewById(R.id.dot);
         historyButton = findViewById(R.id.historyButton);
         historyLayout = findViewById(R.id.historyLayout);
-        themeSwitch = findViewById(R.id.themeSwitch);
+        settings = findViewById(R.id.settings);
         buttons = new ArrayList<>(Arrays.asList(nil, one, two, three, four, five,
                 six, seven, eight, nine, percent, split, compute, minus, plus, dot));
     }
