@@ -1,9 +1,7 @@
 package molinov.myapplication;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -15,21 +13,20 @@ public class Settings extends BaseActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         initButtons();
         setClickListeners();
     }
 
-    @SuppressLint("ShowToast")
     private void setClickListeners() {
         theme1.setOnClickListener(v -> {
             if (theme1.isChecked()) {
                 theme2.setChecked(false);
                 theme3.setChecked(false);
                 setAppTheme(MyTheme1);
-                Toast.makeText(getApplicationContext(), getString(R.string.apply_theme), Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), getString(R.string.apply_theme), Toast.LENGTH_SHORT).show();
             }
         });
         theme2.setOnClickListener(v -> {
@@ -37,7 +34,7 @@ public class Settings extends BaseActivity {
                 theme1.setChecked(false);
                 theme3.setChecked(false);
                 setAppTheme(MyTheme2);
-                Toast.makeText(getApplicationContext(), getString(R.string.apply_theme), Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), getString(R.string.apply_theme), Toast.LENGTH_SHORT).show();
             }
         });
         theme3.setOnClickListener(v -> {
@@ -45,7 +42,7 @@ public class Settings extends BaseActivity {
                 theme1.setChecked(false);
                 theme2.setChecked(false);
                 setAppTheme(MyTheme3);
-                Toast.makeText(getApplicationContext(), getString(R.string.apply_theme), Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), getString(R.string.apply_theme), Toast.LENGTH_SHORT).show();
             }
         });
         back.setOnClickListener(v -> {

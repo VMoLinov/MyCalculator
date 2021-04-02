@@ -16,15 +16,20 @@ public abstract class BaseActivity extends AppCompatActivity {
     private static final String AppTheme = "APP_THEME";
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setTheme(getAppTheme(R.style.MyTheme1));
     }
 
     private int getCodeStyleInt(int codeStyle) {
-        if (codeStyle == MyTheme1) return R.style.MyTheme1;
-        else if (codeStyle == MyTheme2) return R.style.MyTheme2;
-        else return R.style.MyTheme3;
+        switch (codeStyle) {
+            case MyTheme2:
+                return R.style.MyTheme2;
+            case MyTheme3:
+                return R.style.MyTheme3;
+            default:
+                return R.style.MyTheme1;
+        }
     }
 
     private int getCodeStyle(int codeStyle) {

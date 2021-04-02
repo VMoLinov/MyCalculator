@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity {
     private final int REQUEST_CODE = 88;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initializeButtons();
