@@ -1,6 +1,7 @@
 package molinov.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +13,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.*;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private TextView result, calculate, historyText;
     MaterialButton nil, one, two, three, four, five, six, seven, eight, nine, percent, split,
@@ -20,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Button> buttons;
     private ScrollView historyLayout;
     private Fields fields = new Fields();
-    private final String fieldsKey = "key";
+    private final String PARCELABLE = "Parcelable";
+    private final int REQUEST_CODE = 88;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setTheme(Settings.getAppTheme(R.style.MyTheme1));
         setContentView(R.layout.activity_main);
         initializeButtons();
         setButtonsOnClickListeners();
@@ -36,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         fields.setMain(calculate.getText().toString());
         fields.setSlave(result.getText().toString());
-        outState.putParcelable(fieldsKey, fields);
+        outState.putParcelable(PARCELABLE, fields);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        fields = savedInstanceState.getParcelable(fieldsKey);
+        fields = savedInstanceState.getParcelable(PARCELABLE);
         calculate.setText(fields.getMain());
         result.setText(fields.getSlave());
     }
@@ -117,8 +118,18 @@ public class MainActivity extends AppCompatActivity {
         });
         settings.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, Settings.class);
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CODE);
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode != REQUEST_CODE) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+        if (resultCode == RESULT_OK) {
+            recreate();
+        }
     }
 
     private String endsWith(String s) {
